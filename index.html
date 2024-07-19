@@ -52,6 +52,17 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        .about-section {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .about-section a {
+            color: #aa8dd8;
+            text-decoration: none;
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -61,5 +72,23 @@
     <a href="https://discord.gg/3WwF7W3t5P">
         <button>Join Discord</button>
     </a>
+    <button onclick="toggleAbout()">About Us</button>
+    <div class="about-section" id="about-section">
+        <a href="https://e-z.bio/Tanner">Diablo Dev - Tanner</a>
+        <a href="https://e-z.bio/Syuto">Diablo Dev - Syuto</a>
+        <a href="https://e-z.bio/devvince">Diablo Dev - Vince</a>
+        <a href="https://e-z.bio/JadeXD">Home Page Designer - JadeXD</a>
+    </div>
+
+    <script>
+        function toggleAbout() {
+            var aboutSection = document.getElementById('about-section');
+            if (aboutSection.style.display === "none") {
+                aboutSection.style.display = "flex";
+            } else {
+                aboutSection.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
