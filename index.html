@@ -15,7 +15,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             flex-direction: column;
-            animation: fadein 2s; 
+            animation: fadein 2s;
             overflow: hidden;
         }
         h1 {
@@ -75,36 +75,27 @@
         }
         .background .square {
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
             background-color: rgba(170, 141, 216, 0.2);
+            box-shadow: 0 0 10px 2px rgba(170, 141, 216, 0.5);
             animation: move 20s linear infinite;
         }
-        .background .square:nth-child(1) {
-            top: 10%;
-            left: 20%;
-            animation-duration: 15s;
+        .background .square:nth-child(odd) {
+            background-color: rgba(170, 141, 216, 0.3);
+            box-shadow: 0 0 20px 4px rgba(170, 141, 216, 0.7);
         }
-        .background .square:nth-child(2) {
-            top: 70%;
-            left: 30%;
-            animation-duration: 25s;
-        }
-        .background .square:nth-child(3) {
-            top: 50%;
-            left: 50%;
-            animation-duration: 20s;
-        }
-        .background .square:nth-child(4) {
-            top: 30%;
-            left: 70%;
-            animation-duration: 18s;
-        }
-        .background .square:nth-child(5) {
-            top: 80%;
-            left: 80%;
-            animation-duration: 22s;
-        }
+        .background .square:nth-child(1) { top: 10%; left: 20%; animation-duration: 15s; }
+        .background .square:nth-child(2) { top: 70%; left: 30%; animation-duration: 25s; }
+        .background .square:nth-child(3) { top: 50%; left: 50%; animation-duration: 20s; }
+        .background .square:nth-child(4) { top: 30%; left: 70%; animation-duration: 18s; }
+        .background .square:nth-child(5) { top: 80%; left: 80%; animation-duration: 22s; }
+        .background .square:nth-child(6) { top: 20%; left: 80%; animation-duration: 19s; }
+        .background .square:nth-child(7) { top: 40%; left: 10%; animation-duration: 21s; }
+        .background .square:nth-child(8) { top: 60%; left: 90%; animation-duration: 23s; }
+        .background .square:nth-child(9) { top: 85%; left: 15%; animation-duration: 24s; }
+        .background .square:nth-child(10) { top: 10%; left: 90%; animation-duration: 26s; }
+
         @keyframes move {
             0% {
                 transform: translateY(0) translateX(0) rotate(0);
@@ -117,6 +108,11 @@
 </head>
 <body>
     <div class="background">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
         <div class="square"></div>
         <div class="square"></div>
         <div class="square"></div>
