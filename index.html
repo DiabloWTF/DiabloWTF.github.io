@@ -15,19 +15,23 @@
             margin: 0;
             font-family: Arial, sans-serif;
             flex-direction: column;
-            animation: fadein 2s;
             overflow: hidden;
+            position: relative;
         }
         h1 {
             text-align: center;
             margin-bottom: 10px;
             animation: fadein 2s;
+            position: relative;
+            z-index: 1;
         }
         p {
             font-size: 14px;
             margin-top: 0;
             margin-bottom: 20px;
             animation: fadein 2s;
+            position: relative;
+            z-index: 1;
         }
         button {
             background-color: #aa8dd8;
@@ -39,30 +43,42 @@
             border-radius: 5px;
             text-decoration: none;
             animation: fadein 2s;
+            position: relative;
+            z-index: 1;
+            margin-left: 10px;
         }
         button:hover {
             background-color: #9a7cc8;
         }
         img {
-            max-width: 150px; 
-            height: 150px;
+            max-width: 100px;
+            height: auto;
             margin-bottom: 10px;
             animation: fadein 2s;
+            position: relative;
+            z-index: 1;
         }
         @keyframes fadein {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        .about-section {
-            display: none;
+        #content {
+            display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            animation: fadein 2s;
         }
-        .about-section a {
+        #about-diablo {
+            display: none;
+            color: #aa8dd8;
+            animation: fadein 2s;
+        }
+        a {
             color: #aa8dd8;
             text-decoration: none;
-            margin: 5px 0;
+        }
+        a:hover {
+            text-decoration: underline;
         }
         .background {
             position: absolute;
@@ -119,28 +135,38 @@
         <div class="square"></div>
         <div class="square"></div>
     </div>
-    <img src="https://images.emojiterra.com/twitter/512px/1f608.png" alt="Image">
-    <h1>Diablo Client</h1>
-    <p>Made by Vince, Tanner, and Syuto</p>
-    <a href="https://discord.gg/3WwF7W3t5P">
-        <button>Join Discord</button>
-    </a>
-    <button onclick="toggleAbout()">About Us</button>
-    <div class="about-section" id="about-section">
-        <a href="https://e-z.bio/Tanner">Diablo Dev - Tanner</a>
-        <a href="https://e-z.bio/Syuto">Diablo Dev - Syuto</a>
-        <a href="https://e-z.bio/devvince">Diablo Dev - Vince</a>
-        <a href="https://e-z.bio/JadeXD">Home Page Designer - JadeXD</a>
+    <div id="content">
+        <img src="https://images.emojiterra.com/twitter/512px/1f608.png" alt="Image">
+        <h1>Diablo Client</h1>
+        <p>Made by Vince, Tanner, and Syuto</p>
+        <div>
+            <a href="https://discord.gg/3WwF7W3t5P">
+                <button>Join Discord</button>
+            </a>
+            <button onclick="showAbout()">About Diablo</button>
+        </div>
+    </div>
+    <div id="about-diablo">
+        <h1>About Diablo</h1>
+        <p>Diablo client is a client made by Vince, Tanner, Syuto, and Kira, which costs $15 and offers the best quality client for Hypixel and multiserver.</p>
+        <ul>
+            <li><strong>Vince:</strong> <a href="https://e-z.bio/devvince">https://e-z.bio/devvince</a></li>
+            <li><strong>Tanner:</strong> <a href="https://e-z.bio/Tanner">https://e-z.bio/Tanner</a></li>
+            <li><strong>Syuto:</strong> <a href="https://e-z.bio/syuto">https://e-z.bio/syuto</a></li>
+            <li><strong>Kira (website designer) :</strong> <a href="https://e-z.bio/JadeXD">https://e-z.bio/JadeXD</a></li>
+        </ul>
+        <button onclick="hideAbout()">Back</button>
     </div>
 
     <script>
-        function toggleAbout() {
-            var aboutSection = document.getElementById('about-section');
-            if (aboutSection.style.display === "none") {
-                aboutSection.style.display = "flex";
-            } else {
-                aboutSection.style.display = "none";
-            }
+        function showAbout() {
+            document.getElementById('content').style.display = 'none';
+            document.getElementById('about-diablo').style.display = 'block';
+        }
+
+        function hideAbout() {
+            document.getElementById('about-diablo').style.display = 'none';
+            document.getElementById('content').style.display = 'flex';
         }
     </script>
 </body>
