@@ -41,9 +41,9 @@ button {
     z-index: 1;
     margin-left: 10px;
 }
-/* button:hover {
+button:hover {
     background-color: #9a7cc8;
-} */
+}
 img {
     max-width: 150px;
     height: auto;
